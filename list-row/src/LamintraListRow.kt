@@ -75,8 +75,14 @@ data class LamintraListRowColors(
 }
 
 /**
- * A row of a settings or detail list, designed to sit inside a
- * [com.lamintra.card.LamintraCard].
+ * A row of a settings or detail list, designed to sit inside a LamintraCard.
+ *
+ * That reference is deliberately prose rather than a KDoc link. A link would
+ * have to be fully qualified, and the rewriter only rewrites a component's OWN
+ * registry package. Another component's package would survive the install
+ * verbatim, leaking `com.lamintra` into a stranger's source and pointing at a
+ * package that may not exist there at all, since components install
+ * independently. Never reference another component by fully-qualified name.
  *
  * **A pressed row dims.** It does not rise, recess, travel or cast anything -
  * a row is a region of a surface rather than an object floating on one, and
